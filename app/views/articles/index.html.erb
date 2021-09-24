@@ -2,9 +2,15 @@
 <ul>
   <% @articles.each do |article| %>
     <li>
-      <a href="<%= article_path(article) %>">
+      <!--<a href="<%= article_path(article) %>">
         <%= article.title %>
-      </a>
+      </a>-->
+
+      <!-- Su equivalente con el método link_to -->
+      <!-- <%= link_to article.title, article_path(article)  %> -->
+
+      <!-- Simplificando la ruta article_path(article) -->
+      <%= link_to article.title, article  %>
     </li>
   <% end %>
 </ul>
