@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all
@@ -17,7 +19,7 @@ class ArticlesController < ApplicationController
       redirect_to article_path(@article)
     else
       render :new
-    end    
+    end
   end
 
   def edit
@@ -40,7 +42,7 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
-private
+  private
 
   def article_params
     params.require(:article).permit(:title, :body)
